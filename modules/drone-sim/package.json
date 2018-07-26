@@ -1,11 +1,21 @@
 {
-  "name": "drone-sim",
+  "name": "drone-network-drone-sim",
   "version": "1.0.0",
   "description": "simulates a drone out in the world, sending its position, destination, and velocity over websocket to the net-ops-center via protobuf messages",
   "main": "client.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node client.js",
+    "dev": "nodemon client.js"
   },
   "author": "dt-rush",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.22.2",
+    "uuid": "^3.3.2",
+    "ws": "^6.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
 }

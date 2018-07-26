@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+
+  drone-network-dashboard:
+    build: ./modules/dashboard
+    image: dt-rush/drone-network-dashboard
+    restart: always
+    volumes:
+    - ./modules/dashboard:/code
+    - ./modules/shared:/opt/lib/resinio/shared
+
+  drone-network-database:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: resinio
+      MONGO_INITDB_ROOT_PASSWORD: resinio
+
+  drone-network-net-ops-center:
+    build: ./modules/net-ops-center
+    image: dt-rush/drone-network-net-ops-center
+    restart: always
+    environment:
+      PORT: 8000
+      NODE_ENV: production
+      DB_HOST: drone-network-database
+    volumes:
+    - ./modules/net-ops-center:/code
+    - ./modules/shared:/opt/lib/resinio/shared
+
+  drone-network-drone-sim:
+    build: ./modules/drone-sim
+    image: dt-rush/drone-network-drone-sim
+    restart: always
+    environment:
+      NODE_ENV: production
+    volumes:
+    - ./modules/drone-sim:/code
+    - ./modules/shared:/opt/lib/resinio/shared
+
+  

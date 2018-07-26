@@ -1,0 +1,14 @@
+{
+  "name": "drone-network-shared-model",
+  "version": "1.0.0",
+  "description": "defines the schema of the drone object for mongo and the .proto file for message passing over websockets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dt-rush",
+  "license": "MIT",
+  "dependencies": {
+    "protobufjs": "^6.8.8"
+  }
+}
