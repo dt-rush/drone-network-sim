@@ -1,0 +1,15 @@
+{
+  "name": "drone-dashboard",
+  "version": "1.0.0",
+  "description": "display drones on a dashboard, simulate drones communicating their position to a net-ops-center via protobuf",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/dt-rush/drone-dashboard"
+  },
+  "author": "dt-rush",
+  "license": "MIT"
+}
