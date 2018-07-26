@@ -1,0 +1,11 @@
+{
+  "name": "net-ops-center",
+  "version": "1.0.0",
+  "description": "receives drone update protobuf messages over websocket and stores them in the db",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dt-rush",
+  "license": "MIT"
+}
