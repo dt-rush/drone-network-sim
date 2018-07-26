@@ -16,6 +16,8 @@ const LatLonPB = model.drone.pb.LatLon;
 const node_env = process.env.NODE_ENV || 'development';
 const PORT = config.netOpsCenter[node_env].port
 
+console.log(`will listen on ${PORT}`);
+
 const wss = new WebSocket.Server({ port: PORT});
 
 wss.on('listening', ws => {

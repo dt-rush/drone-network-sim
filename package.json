@@ -4,7 +4,11 @@
   "description": "display drones on a dashboard, simulate drones communicating their position to a net-ops-center via protobuf",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dashboard-dev": "npm run --prefix ./modules/dashboard dev",
+    "drone-sim-dev": "npm run --prefix ./modules/drone-sim dev",
+    "net-ops-center-dev": "npm run --prefix ./modules/net-ops-center dev",
+    "dev": "concurrently --kill-others-on-fail \"yarn dashboard-dev\" \"yarn drone-sim-dev\" \"yarn net-ops-center-dev\""
   },
   "repository": {
     "type": "git",

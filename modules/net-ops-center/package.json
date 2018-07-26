@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "drop": "node drop_db.js",
     "start": "node server.js",
+    "drop-start": "npm run drop && npm run start",
     "dev": "nodemon server.js"
   },
   "author": "dt-rush",

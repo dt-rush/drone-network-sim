@@ -8,3 +8,13 @@ dependencies
 ===
 
 node, docker, docker-compose
+
+build 
+===
+
+docker-compose build
+
+run
+===
+
+docker-compose up --scale drone-network-drone-sim=8 

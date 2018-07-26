@@ -2,7 +2,10 @@ const path = require('path');
 const express = require('express');
 
 // define the app config
-const port = 8080;
+const shared = require('./shared');
+const config = shared.config;
+const node_env = process.env.NODE_ENV || 'development';
+const port = config.dashboard[node_env].port;
 const app = express();
 
 // add API

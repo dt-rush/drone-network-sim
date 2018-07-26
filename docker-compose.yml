@@ -6,37 +6,45 @@ services:
     build: ./modules/dashboard
     image: dt-rush/drone-network-dashboard
     restart: always
-    environment:
-      NODE_ENV: production
+    ports:
+      - 8080:8080
+    depends_on:
+      - "drone-network-db" 
+    env_file:
+      - "config.env"
     volumes:
-    - ./modules/dashboard:/code
-    - ./modules/shared:/opt/lib/drone-network/shared
+      - ./modules/dashboard:/code
+      - ./modules/shared:/opt/lib/drone-network/shared
 
   drone-network-db:
-    image: mongo
+    build: ./modules/db
+    image: dt-rush/drone-network-db
     restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: dtrush 
-      MONGO_INITDB_ROOT_PASSWORD: dtrush 
+    env_file:
+      - "config.env"
 
   drone-network-net-ops-center:
     build: ./modules/net-ops-center
     image: dt-rush/drone-network-net-ops-center
     restart: always
-    environment:
-      NODE_ENV: production
+    depends_on: 
+      - "drone-network-db"
+    env_file:
+      - "config.env"
     volumes:
-    - ./modules/net-ops-center:/code
-    - ./modules/shared:/opt/lib/drone-network/shared
+      - ./modules/net-ops-center:/code
+      - ./modules/shared:/opt/lib/drone-network/shared
 
   drone-network-drone-sim:
     build: ./modules/drone-sim
     image: dt-rush/drone-network-drone-sim
     restart: always
-    environment:
-      NODE_ENV: production
+    depends_on: 
+      - "drone-network-net-ops-center"
+    env_file:
+      - "config.env"
     volumes:
-    - ./modules/drone-sim:/code
-    - ./modules/shared:/opt/lib/drone-network/shared
+      - ./modules/drone-sim:/code
+      - ./modules/shared:/opt/lib/drone-network/shared
 
   

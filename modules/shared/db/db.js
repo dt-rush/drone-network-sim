@@ -13,7 +13,7 @@ const dbConfig = config.db[node_env];
 const { user, password, host, port, database } = dbConfig;
 var url;
 if (user && password) {
-  url = `mongodb://${user}:${password}@${host}:${port}/${database}`
+  url = `mongodb://${user}:${password}@${host}:${port}/admin`;
 } else {
   url = `mongodb://${host}:${port}/${database}`
 }
@@ -66,4 +66,5 @@ module.exports = {
   connect,
   find,
   upsertOne,
+  config: dbConfig,
 }

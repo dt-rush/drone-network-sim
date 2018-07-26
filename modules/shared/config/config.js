@@ -4,13 +4,21 @@ module.exports = {
     lat: 45.5017,
     lon: -73.5673,
   },
+  dashboard: {
+    'production': {
+      port: process.env.DASHBOARD_PORT,
+    },
+    'development': {
+      port: '8080',
+    }
+  },
   db: {
     'production': {
-      user: 'dtrush',
-      password: 'dtrush',
-      host: process.env.DB_HOST || 'drone-network-db',
+      user: process.env.MONGO_INITDB_ROOT_USERNAME,
+      password: process.env.MONGO_INITDB_ROOT_PASSWORD,
+      host: process.env.DB_HOST,
       port: '27017',
-      database: 'admin',
+      database: process.env.MONGO_DATABASE,
     },
     'development': {
       host: 'localhost',
@@ -20,8 +28,8 @@ module.exports = {
   },
   netOpsCenter: {
     'production': {
-      host: process.env.NET_OPS_CENTER_HOST || 'drone-network-net-ops-center',
-      port: process.env.NET_OPS_CENTER_POST || '8000',
+      host: process.env.NET_OPS_CENTER_HOST,
+      port: process.env.NET_OPS_CENTER_PORT,
     },
     'development': {
       host: 'localhost',

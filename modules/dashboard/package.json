@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm install && cd ./client && npm install && npm run build",
-    "client": "NODE_ENV=development cd client && npm start",
-    "server": "NODE_ENV=development node server.js",
-    "dev": "NODE_ENV=development concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "prod": "NODE_ENV=production node server.js"
+    "client": "cd client && npm start",
+    "server": "node server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "prod": "node server.js"
   },
   "author": "dt-rush",
   "license": "MIT",
