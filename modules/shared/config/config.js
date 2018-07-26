@@ -5,8 +5,18 @@ module.exports = {
     lon: -73.5673,
   },
   db: {
-    'production': { },
-    'development': { },
+    'production': {
+      user: 'dtrush',
+      password: 'dtrush',
+      host: process.env.DB_HOST || 'drone-network-db',
+      port: '27017',
+      database: 'admin',
+    },
+    'development': {
+      host: 'localhost',
+      port: '27017',
+      database: 'drone-net',
+    }, 
   },
   netOpsCenter: {
     'production': {

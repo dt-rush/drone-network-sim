@@ -17,5 +17,6 @@
     "react-scripts": "1.1.4"
   },
   "author": "dt-rush",
-  "license": "MIT"
+  "license": "MIT",
+  "proxy": "http://localhost:8080"
 }

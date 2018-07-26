@@ -6,28 +6,28 @@ services:
     build: ./modules/dashboard
     image: dt-rush/drone-network-dashboard
     restart: always
+    environment:
+      NODE_ENV: production
     volumes:
     - ./modules/dashboard:/code
-    - ./modules/shared:/opt/lib/resinio/shared
+    - ./modules/shared:/opt/lib/drone-network/shared
 
-  drone-network-database:
+  drone-network-db:
     image: mongo
     restart: always
     environment:
-      MONGO_INITDB_ROOT_USERNAME: resinio
-      MONGO_INITDB_ROOT_PASSWORD: resinio
+      MONGO_INITDB_ROOT_USERNAME: dtrush 
+      MONGO_INITDB_ROOT_PASSWORD: dtrush 
 
   drone-network-net-ops-center:
     build: ./modules/net-ops-center
     image: dt-rush/drone-network-net-ops-center
     restart: always
     environment:
-      PORT: 8000
       NODE_ENV: production
-      DB_HOST: drone-network-database
     volumes:
     - ./modules/net-ops-center:/code
-    - ./modules/shared:/opt/lib/resinio/shared
+    - ./modules/shared:/opt/lib/drone-network/shared
 
   drone-network-drone-sim:
     build: ./modules/drone-sim
@@ -37,6 +37,6 @@ services:
       NODE_ENV: production
     volumes:
     - ./modules/drone-sim:/code
-    - ./modules/shared:/opt/lib/resinio/shared
+    - ./modules/shared:/opt/lib/drone-network/shared
 
   

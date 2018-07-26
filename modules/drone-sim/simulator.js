@@ -1,19 +1,15 @@
 const WebSocket = require('ws');
 const uuid = require('uuid/v4');
+const moment = require('moment');
 const { randomDrone } = require('./mockDrone.js');
 
 // get shared config
 const shared = require('./shared');
 const config = shared.config;
+const model = shared.model;
 
 // small radius around city center
 const RADIUS = 0.10;
-
-// updates a given drone by sending its current data
-// over a websocket via protobuf to the net-ops-center
-const updateDrone = (drone) => {
-	console.log(`sending drone ${drone.id} over websocket as protobuf...`);
-}
 
 // an object which is used to repeatedly update a drone
 const DroneUpdater = (drone, delay, url) => {
@@ -24,13 +20,18 @@ const DroneUpdater = (drone, delay, url) => {
 			const ws = new WebSocket(url);
 			ws.onerror = (err) => console.error(err.message);
 			ws.onopen = () => {
-				ws.send(JSON.stringify(drone));
+				drone.updated = moment().toISOString();
+				const DronePB = model.drone.pb;
+				const bytes = DronePB.encode(DronePB.fromObject(drone)).finish();
+				console.log(`sending ${drone.id} to net-ops-center...`);
+				ws.send(bytes);
 				ws.close();
+				console.log(`sent.`);
 			};
 		},
 		runUpdate: function() {
 			if (updating) {
-				this.updateDrone();
+				this.updateDrone(url);
 				setTimeout(this.runUpdate.bind(this), Math.random() * 2 * delay);
 			}
 		}

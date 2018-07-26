@@ -2,8 +2,11 @@ const path = require('path');
 const express = require('express');
 
 // define the app config
-const port = process.env.PORT || 8080;
+const port = 8080;
 const app = express();
+
+// add API
+app.use('/api', require('./api.js'));
 
 // generic error handler
 app.use(function (err, req, res, next) {

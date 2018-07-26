@@ -1,17 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import API from './API';
+const api = new API();
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      drones: [],
+      city: null,
+    };
+  }
+  componentDidMount() {
+    api.getDrones() 
+      .then(drones => {
+        console.log(drones);
+        this.setState({drones});
+      });
+  }
   render() {
+    const { drones } = this.state;
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1>Drone Dashboard</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+        <p>
+          {drones &&
+            drones.map(drone => (
+              <div><pre>{JSON.stringify(drone)}</pre><br/></div>
+            ))}
         </p>
       </div>
     );

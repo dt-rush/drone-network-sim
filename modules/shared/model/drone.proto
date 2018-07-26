@@ -1,0 +1,15 @@
+package default;
+syntax = "proto3";
+message Drone {
+    string id = 1;
+	string updated = 2;
+
+	message LatLon {
+		float lat = 1;
+		float lon = 2;
+	}
+	
+	LatLon position = 3;
+	float velocity = 4;
+	LatLon destination = 5;
+}
