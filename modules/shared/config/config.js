@@ -1,4 +1,5 @@
 module.exports = {
+  brand: 'drone-net',
   city: {
     name: 'Montreal',
     lat: 45.5017,

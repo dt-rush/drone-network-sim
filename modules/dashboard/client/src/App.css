@@ -10,3 +10,7 @@ html {
   background-color: #222;
   color: white;
 }
+
+.AppContent {
+  padding-top: 50px
+}
