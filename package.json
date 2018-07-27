@@ -1,5 +1,5 @@
 {
-  "name": "drone-network",
+  "name": "drone-network-sim",
   "version": "1.0.0",
   "description": "display drones on a dashboard, simulate drones communicating their position to a net-ops-center via protobuf",
   "main": "index.js",

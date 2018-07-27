@@ -1,4 +1,4 @@
-drone-demo
+drone-network-sim
 ===
 
 display drones on a dashboard, simulate drones communicating their position to 
