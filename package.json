@@ -8,12 +8,16 @@
     "dashboard-dev": "npm run --prefix ./modules/dashboard dev",
     "drone-sim-dev": "npm run --prefix ./modules/drone-sim dev",
     "net-ops-center-dev": "npm run --prefix ./modules/net-ops-center drop-dev",
-    "dev": "bash -c 'source dev.env && concurrently --kill-others-on-fail \"yarn dashboard-dev\" \"yarn drone-sim-dev\" \"yarn net-ops-center-dev\"'"
+    "dev": "bash -c 'source dev.env && concurrently --kill-others-on-fail \"yarn dashboard-dev\" \"yarn drone-sim-dev\" \"yarn net-ops-center-dev\"'",
+    "postinstall": "npm-recursive-install --skip-root"
   },
   "repository": {
     "type": "git",
     "url": "github.com/dt-rush/drone-dashboard"
   },
   "author": "dt-rush",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "recursive-install": "^1.4.0"
+  }
 }
