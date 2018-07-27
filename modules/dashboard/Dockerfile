@@ -1,6 +1,8 @@
 FROM node:8
 
-ADD . .
+COPY . /opt/drone-network/dashboard
+
+WORKDIR /opt/drone-network/dashboard
 
 RUN ["npm", "run", "build"]
 

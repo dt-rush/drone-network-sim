@@ -13,7 +13,6 @@ services:
     env_file:
       - "prod.env"
     volumes:
-      - ./modules/dashboard:/code
       - ./modules/shared:/opt/lib/drone-network/shared
 
   drone-network-db:
@@ -32,7 +31,6 @@ services:
     env_file:
       - "prod.env"
     volumes:
-      - ./modules/net-ops-center:/code
       - ./modules/shared:/opt/lib/drone-network/shared
 
   drone-network-drone-sim:
@@ -44,7 +42,6 @@ services:
     env_file:
       - "prod.env"
     volumes:
-      - ./modules/drone-sim:/code
       - ./modules/shared:/opt/lib/drone-network/shared
 
   

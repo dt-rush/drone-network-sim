@@ -1,5 +1,7 @@
 FROM node:8
 
-ADD . .
+COPY . /opt/drone-network/net-ops-center
+
+WORKDIR /opt/drone-network/net-ops-center
 
 CMD ["bash", "run-prod.sh"]
