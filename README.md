@@ -4,7 +4,7 @@ drone-network-sim
 Display drones on a dashboard, simulate drones communicating their position to 
 a net-ops-center via protobuf.
 
-![Maps view](readme-images/mapsview.png?raw=true "Maps view")
+![Maps view](readme-images/mapview.png?raw=true "Maps view")
 ![Cards view](readme-images/cardsview.png?raw=true "Cards view")
 
 dependencies
