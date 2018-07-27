@@ -50,6 +50,7 @@ class App extends Component {
   }
   render() {
     const { isLoaded, city, drones } = this.state;
+    console.log(drones);
     return (
       <HashRouter>
         <div className="App">

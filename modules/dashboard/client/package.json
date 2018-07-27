@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "moment": "^2.19.1",
+    "moment-with-locales-es6": "^1.0.1",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",

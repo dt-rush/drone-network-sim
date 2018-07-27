@@ -37,17 +37,15 @@ export class AppContent extends Component {
   render() {
     // styles are hidden / shown depending on location
     const { location } = this.state;
+    const { city, drones } = this.props;
     return (
       <div className="AppContent">
-
         <div style={{display: location === '/' ? 'block' : 'none'}}>
-          <MapView city={this.props.city} drones={this.props.drones} />
+          <MapView city={city} drones={drones} />
         </div>
-
         <div style={{display: location === '/cards' ? 'block' : 'none'}}>
-          <CardsView drones={this.props.drones} />
+          <CardsView drones={drones} />
         </div>
-
       </div>
     );
   }

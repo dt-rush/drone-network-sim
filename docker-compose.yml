@@ -11,7 +11,7 @@ services:
     depends_on:
       - "drone-network-db" 
     env_file:
-      - "config.env"
+      - "prod.env"
     volumes:
       - ./modules/dashboard:/code
       - ./modules/shared:/opt/lib/drone-network/shared
@@ -21,7 +21,7 @@ services:
     image: dt-rush/drone-network-db
     restart: always
     env_file:
-      - "config.env"
+      - "prod.env"
 
   drone-network-net-ops-center:
     build: ./modules/net-ops-center
@@ -30,7 +30,7 @@ services:
     depends_on: 
       - "drone-network-db"
     env_file:
-      - "config.env"
+      - "prod.env"
     volumes:
       - ./modules/net-ops-center:/code
       - ./modules/shared:/opt/lib/drone-network/shared
@@ -42,7 +42,7 @@ services:
     depends_on: 
       - "drone-network-net-ops-center"
     env_file:
-      - "config.env"
+      - "prod.env"
     volumes:
       - ./modules/drone-sim:/code
       - ./modules/shared:/opt/lib/drone-network/shared

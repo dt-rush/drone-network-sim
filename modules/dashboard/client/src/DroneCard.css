@@ -1,0 +1,41 @@
+.DroneCard {
+  margin: 0.625em;
+  width: 100%;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding:0.1em;
+  border-radius: 5px;
+}
+
+.DroneCard.fixed-bottom-left {
+  position: fixed;
+  left: 5px;
+  bottom: 30px;
+  width: 20em;
+}
+
+.DroneCard .DronePropertyRow {
+  border-bottom: 1px solid #ddd;
+  line-height: 1.8em;
+  height: 2em;
+  font-size: 0.8em;
+  padding: 0.2em;
+}
+
+.DroneCard .DronePropertyRow.stale .property, 
+.DroneCard .DronePropertyRow.stale .value {
+  color: #e32800; 
+}
+
+.DroneCard .DronePropertyRow .property {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.DroneCard .DronePropertyRow .value {
+  float: right;
+}
+
+.DroneCard .DronePropertyRow:last-child {
+  border-bottom: 0;
+}

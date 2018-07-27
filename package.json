@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dashboard-dev": "npm run --prefix ./modules/dashboard dev",
     "drone-sim-dev": "npm run --prefix ./modules/drone-sim dev",
-    "net-ops-center-dev": "npm run --prefix ./modules/net-ops-center dev",
-    "dev": "concurrently --kill-others-on-fail \"yarn dashboard-dev\" \"yarn drone-sim-dev\" \"yarn net-ops-center-dev\""
+    "net-ops-center-dev": "npm run --prefix ./modules/net-ops-center drop-dev",
+    "dev": "bash -c 'source dev.env && concurrently --kill-others-on-fail \"yarn dashboard-dev\" \"yarn drone-sim-dev\" \"yarn net-ops-center-dev\"'"
   },
   "repository": {
     "type": "git",

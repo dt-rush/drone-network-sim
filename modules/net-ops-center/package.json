@@ -8,7 +8,8 @@
     "drop": "node drop_db.js",
     "start": "node server.js",
     "drop-start": "npm run drop && npm run start",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "drop-dev": "npm run drop && nodemon server.js"
   },
   "author": "dt-rush",
   "license": "MIT",
