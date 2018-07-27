@@ -1,0 +1,9 @@
+.DroneMap {
+  height: 100%;
+  overflow: hidden;
+}
+
+.idPopup .mapboxgl-popup-content {
+  font-family: monospace; 
+  font-size: 0.8em;
+}

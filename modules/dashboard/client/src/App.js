@@ -54,9 +54,7 @@ class App extends Component {
     return (
       <HashRouter>
         <div className="App">
-          <header className="App-header">
-            <AppNav/>
-          </header>
+          <AppNav/>
           {isLoaded && <AppContent city={city} drones={drones} />}
           {!isLoaded && <div className="centered"> LOADING </div>}
         </div>

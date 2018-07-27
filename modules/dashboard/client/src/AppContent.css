@@ -1,0 +1,7 @@
+.AppContent {
+  height: calc(100vh - 50px);
+}
+
+.AppContent-view {
+  height: 100%;
+}

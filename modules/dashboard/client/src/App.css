@@ -1,16 +1,14 @@
 html {
   background-color: #383838;
+  height: 100%;
+}
+
+body {
+    min-height: 100%;
 }
 
 .App {
   background-color: #383838;
 }
 
-.App-header {
-  background-color: #222;
-  color: white;
-}
 
-.AppContent {
-  padding-top: 50px
-}

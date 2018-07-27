@@ -5,6 +5,9 @@ import {
   withRouter,
 } from "react-router-dom";
 
+// import styling
+import "./AppContent.css";
+
 // import views
 import MapView from "./MapView";
 import CardsView from "./CardsView";
@@ -40,10 +43,22 @@ export class AppContent extends Component {
     const { city, drones } = this.props;
     return (
       <div className="AppContent">
-        <div style={{display: location === '/' ? 'block' : 'none'}}>
+        {/* this particular pattern is needed so that we can properly hide
+          the map -- preventing it from being remounted and having to call
+          the mapbox API again, while is still retains knowledge of its
+          size and can resize properly while hidden as well.
+
+          https://stackoverflow.com/a/35487429/9715599*/}
+        <div className="AppContent-view"
+          style={{
+              position: 'fixed',
+              opacity: location === '/' ? '1.0' : '0.0',
+              zIndex: location === '/' ? '1' : '-1',
+        }}>
           <MapView city={city} drones={drones} />
         </div>
-        <div style={{display: location === '/cards' ? 'block' : 'none'}}>
+        <div className="AppContent-view"
+          style={{display: location === '/cards' ? 'block' : 'none'}}>
           <CardsView drones={drones} />
         </div>
       </div>

@@ -1,11 +1,11 @@
 import React from 'react';
 
+import DroneMap from './DroneMap';
+
+import "./MapView.css";
+
 export default (props) => (
   <div className="MapView">
-    <pre>
-      MAP VIEW
-      props: 
-      {JSON.stringify(props)}
-    </pre>
+    <DroneMap drones={props.drones} city={props.city} />
   </div>
 );
