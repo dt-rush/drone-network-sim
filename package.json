@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "github.com/dt-rush/drone-dashboard"
+    "url": "github.com/dt-rush/drone-network-sim"
   },
   "author": "dt-rush",
   "license": "MIT",
