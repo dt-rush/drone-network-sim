@@ -31,6 +31,9 @@ export default (props) => {
       <DronePropertyRow 
         property="destination"
         value={latlonToString(drone.destination)} />
+      <DronePropertyRow 
+        property="velocity"
+        value={drone.velocity.toFixed(2) + ' m/s'} />
     </div>
   );
 }
