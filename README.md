@@ -12,7 +12,7 @@ node, docker, docker-compose
 build 
 ===
 
-docker-compose build
+npm i && docker-compose build
 
 run
 ===
