@@ -48,7 +48,14 @@ export class AppContent extends Component {
           the mapbox API again, while is still retains knowledge of its
           size and can resize properly while hidden as well.
 
-          https://stackoverflow.com/a/35487429/9715599*/}
+          credit for this trick:
+          https://stackoverflow.com/a/35487429/9715599
+
+          more detailed write-up I have added as a comment in an issue I opened
+          on the `react-map-gl` repo:
+
+          https://github.com/uber/react-map-gl/issues/555
+          */}
         <div className="AppContent-view"
           style={{
               position: 'fixed',
