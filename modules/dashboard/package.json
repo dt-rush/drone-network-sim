@@ -16,6 +16,7 @@
   "dependencies": {
     "concurrently": "^3.6.1",
     "express": "^4.16.3",
+    "wait-port": "^0.2.2",
     "yarn": "^1.7.0"
   }
 }

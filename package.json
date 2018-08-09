@@ -18,6 +18,10 @@
   "author": "dt-rush",
   "license": "MIT",
   "devDependencies": {
-    "recursive-install": "^1.4.0"
+    "recursive-install": "^1.4.0",
+    "nodemon": "^1.18.3"
+  },
+  "dependencies": {
+    "wait-port": "^0.2.2"
   }
 }

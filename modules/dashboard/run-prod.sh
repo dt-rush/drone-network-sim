@@ -1,3 +1,4 @@
 #!/bin/bash
 
-./wait-for-it.sh -t 30 $DB_HOST:27017 -- npm run prod
+./node_modules/.bin/wait-port -t 30000 $DB_HOST:27017
+npm run prod
